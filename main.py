@@ -26,7 +26,7 @@ def main() -> None:
     app = Dash(external_stylesheets=[dpc.themes.SOLAR])
     app.title = i18n.t("general.app_title")
     app.layout = create_layout(app, data)
-    app.run()
+    app.run(host="0.0.0.0", port=4000)
 
 
 if __name__ == "__main__":
