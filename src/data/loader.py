@@ -18,6 +18,7 @@ class DataSchema:
 
 
 def create_year_column(df: pd.DataFrame) -> pd.DataFrame:
+    df[DataSchema.DATE] = pd.to_datetime(df[DataSchema.DATE], errors='coerce')  # Convert to datetime
     df[DataSchema.YEAR] = df[DataSchema.DATE].dt.year.astype(str)
     return df
 
